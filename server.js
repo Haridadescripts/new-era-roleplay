@@ -5,14 +5,12 @@ const cors = require('cors');
 const app = express();
 
 // Middleware
-app.use(express.json());
 app.use(cors());
-
-// Servir arquivos estáticos
+app.use(express.json());
 app.use(express.static('public'));
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-// Usuários do sistema
+// Usuários
 const users = {
     'Mabbis': {
         password: '12345678',
@@ -28,7 +26,21 @@ const users = {
     }
 };
 
-// API Routes
+// Rota principal
+app.get('/', (req, res) => {
+    res.redirect('/login');
+});
+
+// Rotas de autenticação
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin', 'login.html'));
+});
+
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin', 'dashboard.html'));
+});
+
+// API Login
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     const user = users[username];
@@ -37,18 +49,17 @@ app.post('/api/login', (req, res) => {
         const { password, ...userData } = user;
         res.json({
             token: `token_${Date.now()}`,
-            user: userData,
-            redirectUrl: 'https://new-era-roleplay-a8azi9ers-haridadescripts-projects.vercel.app/admin'
+            user: userData
         });
     } else {
         res.status(401).json({ error: 'Credenciais inválidas' });
     }
 });
 
-// Array para armazenar membros (temporário)
+// Membros temporários
 let members = [];
 
-// CRUD de membros
+// API Membros
 app.get('/api/members', (req, res) => {
     res.json(members);
 });
@@ -86,29 +97,18 @@ app.delete('/api/members/:id', (req, res) => {
     res.status(204).send();
 });
 
-// Rotas HTML
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'admin', 'login.html'));
-});
-
-app.get('/admin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'admin', 'dashboard.html'));
-});
-
 // 404 handler
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
-// Vercel serverless compatibility
+// Vercel serverless
+module.exports = app;
+
+// Development server
 if (process.env.NODE_ENV !== 'production') {
     const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
-        console.log(`\n=== New Era Roleplay Server ===`);
-        console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-        console.log(`📡 Ambiente: ${process.env.NODE_ENV || 'development'}\n`);
+        console.log(`Server running on http://localhost:${PORT}`);
     });
 }
-
-// Export for Vercel
-module.exports = app;
