@@ -3,7 +3,6 @@ const path = require('path');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
@@ -13,10 +12,7 @@ app.use(cors());
 app.use(express.static('public'));
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-// Array para armazenar membros (temporário, substitua por banco de dados depois)
-let members = [];
-
-// Adicione este objeto de usuários no início do arquivo, após as importações
+// Usuários do sistema
 const users = {
     'Mabbis': {
         password: '12345678',
@@ -32,23 +28,25 @@ const users = {
     }
 };
 
-// Rotas da API
+// API Routes
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     const user = users[username];
     
     if (user && user.password === password) {
-        // Remove a senha antes de enviar os dados do usuário
         const { password, ...userData } = user;
-        
         res.json({
             token: `token_${Date.now()}`,
-            user: userData
+            user: userData,
+            redirectUrl: 'https://new-era-roleplay-a8azi9ers-haridadescripts-projects.vercel.app/admin'
         });
     } else {
         res.status(401).json({ error: 'Credenciais inválidas' });
     }
 });
+
+// Array para armazenar membros (temporário)
+let members = [];
 
 // CRUD de membros
 app.get('/api/members', (req, res) => {
@@ -88,23 +86,29 @@ app.delete('/api/members/:id', (req, res) => {
     res.status(204).send();
 });
 
-// Rotas para as páginas
-app.get('/admin/login', (req, res) => {
+// Rotas HTML
+app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'admin', 'login.html'));
 });
 
-app.get('/admin/dashboard', (req, res) => {
+app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'admin', 'dashboard.html'));
 });
 
-// Rota para 404
+// 404 handler
 app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
-// Iniciar servidor
-app.listen(PORT, () => {
-    console.log(`\n=== New Era Roleplay Server ===`);
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-    console.log(`📡 Ambiente: ${process.env.NODE_ENV || 'development'}\n`);
-});
+// Vercel serverless compatibility
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+        console.log(`\n=== New Era Roleplay Server ===`);
+        console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+        console.log(`📡 Ambiente: ${process.env.NODE_ENV || 'development'}\n`);
+    });
+}
+
+// Export for Vercel
+module.exports = app;

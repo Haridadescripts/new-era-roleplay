@@ -16,44 +16,33 @@ class LoginManager {
 
     async handleLogin(e) {
         e.preventDefault();
-        
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        if (!username || !password) {
-            this.showError('Por favor, preencha todos os campos');
-            return;
-        }
-
         this.setLoading(true);
 
         try {
+            const formData = new FormData(this.form);
             const response = await fetch('/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ username, password })
+                body: JSON.stringify({
+                    username: formData.get('username'),
+                    password: formData.get('password')
+                })
             });
 
             const data = await response.json();
 
-            if (!response.ok) {
+            if (response.ok) {
+                localStorage.setItem('token', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+                window.location.href = '/admin';
+            } else {
                 throw new Error(data.error || 'Erro ao fazer login');
             }
-
-            // Salvar dados do usuário
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('user', JSON.stringify(data.user));
-
-            // Feedback visual
-            this.loginButton.querySelector('.btn-text').textContent = 'Sucesso!';
-            
-            // Redirecionar para o dashboard
-            window.location.href = '/admin/dashboard';
-
         } catch (error) {
-            this.showError(error.message || 'Usuário ou senha incorretos');
+            this.showError(error.message);
+        } finally {
             this.setLoading(false);
         }
     }
