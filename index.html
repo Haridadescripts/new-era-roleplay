@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Era Roleplay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="img/image0.png" alt="New Era">
+        </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="navigation">
+            <div class="nav-items">
+                <i class="fas fa-times"></i>
+                <a href="#home">Home</a>
+                <a href="#info">Info</a>
+                <a href="#clans">Clans</a>
+                <a href="#about">About</a>
+                <a href="#join">Join</a>
+                <a href="#" class="login-btn" onclick="showLoginModal()">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resto do seu HTML atual -->
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Escolha seu tipo de login</h3>
+                <span class="close-modal" onclick="closeLoginModal()">&times;</span>
+            </div>
+            <div class="login-options">
+                <button class="player-login-btn" onclick="redirectToPlayerLogin()">
+                    <i class="fas fa-user"></i>
+                    <span>Player</span>
+                    <small>Acesso ao painel do jogador</small>
+                </button>
+                <button class="clan-leader-btn" onclick="redirectToAdminLogin()">
+                    <i class="fas fa-crown"></i>
+                    <span>Líder de Clã</span>
+                    <small>Acesso ao painel administrativo</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
