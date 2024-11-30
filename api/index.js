@@ -20,10 +20,7 @@ const users = {
     }
 };
 
-// Membros temporários
-let members = [];
-
-// Rotas da API
+// API Routes
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
     const user = users[username];
@@ -32,22 +29,14 @@ app.post('/api/login', (req, res) => {
         const { password, ...userData } = user;
         res.json({
             token: `token_${Date.now()}`,
-            user: userData
+            user: userData,
+            redirectUrl: '/admin/dashboard'
         });
     } else {
         res.status(401).json({ error: 'Credenciais inválidas' });
     }
 });
 
-app.get('/api/members', (req, res) => {
-    res.json(members);
-});
+// ... resto das rotas da API ...
 
-app.post('/api/members', (req, res) => {
-    const newMember = {
-        id: Date.now().toString(),
-        ...req.body,
-        createdAt: new Date().toISOString()
-    };
-    
-}); 
+module.exports = app;

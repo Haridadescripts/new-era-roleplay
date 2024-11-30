@@ -1,8 +1,6 @@
 class LoginManager {
     constructor() {
         this.form = document.getElementById('loginForm');
-        this.errorMessage = document.getElementById('errorMessage');
-        this.loginButton = this.form.querySelector('.login-btn');
         this.init();
     }
 
@@ -36,7 +34,7 @@ class LoginManager {
             if (response.ok) {
                 localStorage.setItem('token', data.token);
                 localStorage.setItem('user', JSON.stringify(data.user));
-                window.location.href = '/admin';
+                window.location.href = data.redirectUrl;
             } else {
                 throw new Error(data.error || 'Erro ao fazer login');
             }
@@ -74,4 +72,14 @@ style.textContent = `
         75% { transform: translateX(5px); }
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+function redirectToAdminLogin() {
+    window.location.href = '/admin/login';
+}
+
+function redirectToPlayerLogin() {
+    closeLoginModal();
+    // Você pode implementar o login de player depois
+    alert('Sistema de login de players em desenvolvimento!');
+} 
