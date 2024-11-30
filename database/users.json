@@ -1,0 +1,27 @@
+{
+  "admins": [
+    {
+      "username": "admin",
+      "password": "$2b$10$savIiyS4W7U1lKaE8m.F1OvVbXylAXakV5FMJXmIjJDyuzfDD6w32",
+      "role": "super_admin",
+      "permissions": [
+        "all"
+      ]
+    }
+  ],
+  "clan_leaders": [
+    {
+      "username": "Mabbis",
+      "password": "$2b$10$ZcIUbrPb04kvryfSK1RDeewQFJSA2oLiw2MRMUWpOo1o0anfSnYYq",
+      "role": "clan_leader",
+      "clan": "Uchiha",
+      "permissions": [
+        "edit_clan",
+        "add_members",
+        "remove_members",
+        "edit_members"
+      ],
+      "createdAt": "2024-11-30T02:27:03.504Z"
+    }
+  ]
+}

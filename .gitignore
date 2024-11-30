@@ -1,0 +1,5 @@
+const config = require('./config/env');
+
+// Exemplo de uso
+const port = config.server.port;
+const jwtSecret = config.security.jwtSecret; 

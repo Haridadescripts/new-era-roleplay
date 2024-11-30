@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #E0DD4E;
+    --dark-bg: #1a1a1a;
+    --card-bg: #2a2a2a;
+    --text-color: #ffffff;
+    --border-color: rgba(224, 221, 78, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: 250px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+}
+
+.admin-profile {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.role-badge {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.admin-menu {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.admin-menu li {
+    padding: 12px 15px;
+    cursor: pointer;
+}
+
+.login-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('/img/wiki-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-box {
+    background: rgba(42, 42, 42, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(224, 221, 78, 0.2);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-header h1 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(224, 221, 78, 0.2);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(224, 221, 78, 0.2);
+}
+
+.login-btn.loading {
+    color: transparent;
+}
+
+.btn-loader {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--dark-bg);
+    animation: spin 1s linear infinite;
+}
+
+.login-btn.loading .btn-loader {
+    display: block;
+}
+
+.error-message {
+    color: #ff4444;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9em;
+    min-height: 20px;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Animação de entrada */
+.login-box {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

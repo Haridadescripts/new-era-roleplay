@@ -1,0 +1,59 @@
+{
+  "clans": [
+    {
+      "name": "Uchiha",
+      "type": "clan",
+      "village": "Konoha",
+      "description": "Um dos clãs mais poderosos, conhecido pelo Sharingan",
+      "stats": {
+        "força": 90,
+        "chakra": 85
+      },
+      "category": "clans"
+    },
+    {
+      "name": "Senju",
+      "type": "clan",
+      "village": "Konoha",
+      "description": "Conhecido como o clã dos mil jutsus",
+      "stats": {
+        "força": 95,
+        "chakra": 90
+      },
+      "category": "clans"
+    }
+  ],
+  "jutsu": [
+    {
+      "name": "Katon: Goukakyuu no Jutsu",
+      "type": "Fogo",
+      "damage": 80,
+      "chakra": 50,
+      "description": "Técnica de fogo que cria uma enorme bola de chamas",
+      "seals": ["🐯", "🐍", "🐒", "🐗"],
+      "category": "jutsu"
+    },
+    {
+      "name": "Rasengan",
+      "type": "Vento",
+      "damage": 85,
+      "chakra": 60,
+      "description": "Esfera giratória de chakra concentrado",
+      "seals": ["não possui"],
+      "category": "jutsu"
+    }
+  ],
+  "villages": [
+    {
+      "name": "Konohagakure",
+      "type": "village",
+      "description": "A Vila Oculta da Folha, conhecida por seus ninjas lendários",
+      "specialties": [
+        "Ninjutsu",
+        "Trabalho em Equipe",
+        "Força de Vontade"
+      ],
+      "category": "villages"
+    }
+  ]
+} 

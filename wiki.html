@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki - New Era Roleplay</title>
+    <link rel="shortcut icon" href="./img/image0.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/wiki-styles.css">
+</head>
+<body>
+    <div class="wiki-background">
+        <header>
+            <nav class="navbar">
+                <a href="./index.html"><img src="./img/image0.png" alt=""></a>
+                <button class="menu-mobile-btn">☰</button>
+                <ul class="navmenu">
+                    <li class="nav-item"><a href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a href="wiki.html">Wiki</a></li>
+                    <li class="nav-item"><a href="">Story</a></li>
+                    <button class="btn1"><a href="">JOGAR!</a></button>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="wiki-content">
+            <h1 class="wiki-title">Enciclopédia Ninja</h1>
+            
+            <div class="wiki-navigation">
+                <button class="wiki-tab active" data-tab="clans">Clãs</button>
+                <button class="wiki-tab" data-tab="jutsu">Jutsus</button>
+                <button class="wiki-tab" data-tab="villages">Vilas</button>
+            </div>
+
+            <div class="search-container">
+                <div class="search-wrapper">
+                    <input type="text" id="searchInput" placeholder="Pesquisar..." class="search-input">
+                    <div id="searchSuggestions" class="search-suggestions"></div>
+                </div>
+            </div>
+
+            <div class="wiki-sections">
+                <!-- Seção de Clãs -->
+                <section id="clans" class="wiki-section active">
+                    <!-- Konoha -->
+                    <div class="village-separator">
+                        <h2>Clãs de Konoha</h2>
+                    </div>
+                    <div class="clan-grid">
+                        <!-- Uchiha -->
+                        <div class="clan-card" data-name="Uchiha">
+                            <div class="clan-image">
+                                <img src="./img/uchiha.jpg" alt="Clã Uchiha">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Clã Uchiha</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Força</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Chakra</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Um dos clãs mais poderosos, conhecido pelo Sharingan e suas habilidades oculares únicas.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Senju -->
+                        <div class="clan-card" data-name="Senju">
+                            <div class="clan-image">
+                                <img src="./img/senju.jpg" alt="Clã Senju">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Clã Senju</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Força</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Chakra</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Conhecido como o clã dos mil jutsus, com extraordinária força vital e afinidade com todos os elementos.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Hyuuga -->
+                        <div class="clan-card" data-name="Hyuuga">
+                            <div class="clan-image">
+                                <img src="./img/hyuuga.jpg" alt="Clã Hyuuga">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Clã Hyuuga</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Força</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Chakra</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="80%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Mestres do Byakugan e do Punho Gentil, especialistas em combate corpo a corpo e visão aprimorada.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Nara -->
+                        <div class="clan-card" data-name="Nara">
+                            <div class="clan-image">
+                                <img src="./img/nara.jpg" alt="Clã Nara">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Clã Nara</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Inteligência</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Chakra</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Mestres da manipulação de sombras e estrategistas brilhantes.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Yamanaka -->
+                        <div class="clan-card" data-name="Yamanaka">
+                            <div class="clan-image">
+                                <img src="./img/yamanaka.jpg" alt="Clã Yamanaka">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Clã Yamanaka</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Controle Mental</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Chakra</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Especialistas em técnicas de controle mental e transferência de consciência.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Hatake -->
+                        <div class="clan-card" data-name="Hatake">
+                            <div class="clan-image">
+                                <img src="./img/hatake.jpg" alt="Clã Hatake">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Clã Hatake</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Força</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="88%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Chakra</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Conhecidos por sua excelência em ninjutsu e chakra branco.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+
+                        <!-- Lee (Não é um clã tradicional, mas uma família ninja) -->
+                        <div class="clan-card" data-name="Lee">
+                            <div class="clan-image">
+                                <img src="./img/lee.jpg" alt="Família Lee">
+                            </div>
+                            <div class="clan-info">
+                                <h3>Família Lee</h3>
+                                <div class="clan-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Taijutsu</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Força Física</span>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" data-width="95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>Mestres do taijutsu e especialistas em combate físico.</p>
+                                <button class="clan-details-btn">Ver Detalhes</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção de Jutsus -->
+                <section id="jutsu" class="wiki-section">
+                    <div class="jutsu-grid">
+                        <div class="jutsu-card">
+                            <div class="jutsu-type">Fogo</div>
+                            <h3>Katon: Goukakyuu no Jutsu</h3>
+                            <div class="jutsu-info">
+                                <div class="jutsu-stats">
+                                    <span>Dano: 80</span>
+                                    <span>Chakra: 50</span>
+                                </div>
+                                <p>Técnica de fogo que cria uma enorme bola de chamas.</p>
+                            </div>
+                            <div class="jutsu-seals">
+                                <span>Selos: 🐯 → 🐍 → 🐒 → 🐗</span>
+                            </div>
+                        </div>
+                        <!-- Adicione mais jutsus seguindo o mesmo padrão -->
+                    </div>
+                </section>
+
+                <!-- Seção de Vilas -->
+                <section id="villages" class="wiki-section">
+                    <div class="village-grid">
+                        <div class="village-card">
+                            <div class="village-image">
+                                <img src="./img/konoha.jpg" alt="Konohagakure">
+                            </div>
+                            <div class="village-info">
+                                <h3>Konohagakure</h3>
+                                <p>A Vila Oculta da Folha, conhecida por seus ninjas lendários e forte senso de união.</p>
+                                <div class="village-specialties">
+                                    <h4>Especialidades:</h4>
+                                    <ul>
+                                        <li>Ninjutsu</li>
+                                        <li>Trabalho em Equipe</li>
+                                        <li>Força de Vontade</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Adicione mais vilas seguindo o mesmo padrão -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="wiki.js"></script>
+</body>
+</html> 

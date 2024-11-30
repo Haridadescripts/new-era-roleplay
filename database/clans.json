@@ -1,0 +1,30 @@
+{
+  "clans": [
+    {
+      "name": "Uchiha",
+      "leader": "Mabbis",
+      "description": "Um dos clãs mais poderosos de Konoha, conhecido pelo Sharingan",
+      "village": "Konoha",
+      "kekkeiGenkai": "Sharingan",
+      "stats": {
+        "força": 90,
+        "chakra": 85,
+        "genjutsu": 95,
+        "ninjutsu": 90,
+        "taijutsu": 85
+      },
+      "members": [],
+      "specializations": [
+        "Genjutsu",
+        "Katon (Técnicas de Fogo)",
+        "Dōjutsu"
+      ],
+      "requirements": [
+        "Linhagem Uchiha",
+        "Potencial para despertar o Sharingan"
+      ],
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+} 
